@@ -1,0 +1,13 @@
+package gameabstract;
+
+
+//Abstraction of something that can render
+//something that is renderable
+public interface Renderer {
+	//called to render something renderable
+	public void render(Renderable e);
+	//called at the beginning of every render pass
+	public void begin();
+	//called at the end of every render pass
+	public void end();
+}
