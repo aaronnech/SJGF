@@ -1,5 +1,11 @@
 package simpleui;
-
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: The basis for all UI components
+ * Implements renderable since ui components are rendereable
+ * 
+ */
 import gameabstract.InputEvent;
 import gameabstract.Renderable;
 
@@ -17,6 +23,7 @@ public abstract class SimpleUIComponent implements Renderable {
 	
 	private ArrayList<SimpleSubscription> subscriptions;
 	
+	//UI Components can have a name location, and dimension
 	public SimpleUIComponent(String name, float x, float y, float width,
 			float height) {
 		this.x = x;
@@ -28,15 +35,18 @@ public abstract class SimpleUIComponent implements Renderable {
 		subscriptions = new ArrayList<SimpleSubscription>();
 	}
 	
+	//UI components can also just be constructed with no fields
 	public SimpleUIComponent() {
 		subscriptions = new ArrayList<SimpleSubscription>();
 	}
 	
+	//called by the UI manager to react to specific input events
 	abstract public boolean react(InputEvent event);
+	
+	//Getters/Setters for ui component properties
 	public final String getName() {
 		return name;
 	}
-	
 	public final void setName(String name) {
 		this.name = name;
 	}
@@ -64,27 +74,41 @@ public abstract class SimpleUIComponent implements Renderable {
 	public final void setHeight(float height) {
 		this.height = height;
 	}
+	
+	//Hides and shows ui components
 	public final void hide() {
 		hide = true;
 	}
 	public final void show() {
 		hide = false;
 	}
+	
+	//returns true if the component is not hidden
 	public final boolean visible() {
 		return !hide;
 	}
+	
+	//marks a component for deletion
 	public final void delete() {
 		markDelete = true;
 	}
+	
+	//returns true if this component is ready to be deleted
 	public final boolean markedDelete() {
 		return markDelete;
 	}
+	
+	//sets the message of this component
 	public final void setMessage(Object o) {
 		message = o;
 	}
+	
+	//gets the message of this component
 	public final Object getMessage() {
 		return message;
 	}
+	
+	//connects this component to a SimpleUIListener
 	public final void subscribe(SimpleUIListener listener, SimpleEventType action,
 			String methodName) {
 		try {
@@ -94,9 +118,13 @@ public abstract class SimpleUIComponent implements Renderable {
 			throw new IllegalArgumentException("Bad subscription! " + methodName);
 		}
 	}
+	
+	//clears all connections to listeners
 	public final void clearSubscriptions() {
 		subscriptions.clear();
 	}
+	
+	//fires event to subscribers
 	protected final void fireEvent(SimpleEvent e) {
 		for(SimpleSubscription subscription : subscriptions) {
 			if(subscription.action == e.getAction()) {

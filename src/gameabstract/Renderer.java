@@ -1,8 +1,11 @@
 package gameabstract;
-
-
-//Abstraction of something that can render
-//something that is renderable
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: Abstraction of something that can render
+ * something that is renderable
+ * 
+ */
 public interface Renderer {
 	//called to render something renderable
 	public void render(Renderable e);
