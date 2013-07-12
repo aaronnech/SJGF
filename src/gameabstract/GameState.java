@@ -1,8 +1,12 @@
 package gameabstract;
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: this class abstracts the GameState. To use, simply extend this GameState
+ * and fill in the missing functionality
+ * 
+ */
 
-
-//this class abstracts the GameState. To use, simply extend this GameState
-//and fill in the missing functionality
 public abstract class GameState implements InputHandler{
 	private GameInput inputProcessor;
 	

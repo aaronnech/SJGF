@@ -1,9 +1,14 @@
 package gameabstract;
-
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: LibGDX bridge for abstract gameinput engine
+ * 
+ */
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 
-//LibGDX bridge for abstract gameinput engine
+
 public class GDXGameInput extends GameInput implements InputProcessor {
 	private int cW, cH;
 	private static final int TAP_PADDING = 8;
@@ -73,11 +78,11 @@ public class GDXGameInput extends GameInput implements InputProcessor {
 	public boolean mouseMoved(int screenX, int screenY) {
 		int[] passed = {(int) (screenX * ((float) cW / Gdx.graphics.getWidth())),
 				(int) (screenY * ((float) cH / Gdx.graphics.getHeight()))};
-		add(new InputEvent("touchDragged", passed));
+		add(new InputEvent("mouseMoved", passed));
 		return true;
 	}
 	public boolean scrolled(int amount) {
-		add(new InputEvent("touchDragged", amount));
+		add(new InputEvent("scrolled", amount));
 		return true;
 	}
 

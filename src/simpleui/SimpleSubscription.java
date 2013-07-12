@@ -1,5 +1,12 @@
 package simpleui;
 
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: A subscription object. Connects events to methods of listeners
+ * through reflection
+ * 
+ */
 import java.lang.reflect.Method;
 
 public class SimpleSubscription {

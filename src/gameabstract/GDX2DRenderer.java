@@ -1,5 +1,11 @@
 package gameabstract;
-
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: LibGDX 2D implementation of the abstract Renderer, 
+ * Uses orthographic camera techniques to render 2 dimensional games
+ * 
+ */
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL10;
@@ -9,8 +15,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-//LibGDX 2D implementation of the abstract Renderer
-//Uses orthographic camera techniques to render 2 dimensional games
 public abstract class GDX2DRenderer implements Renderer {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;

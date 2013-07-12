@@ -1,7 +1,11 @@
 package gameabstract;
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: this class represents a Input Event to be processed by a GameInput object
+ * 
+ */
 
-//this class represents a Input Event to be processed
-//by a GameInput object
 public class InputEvent {
 	private String type;
 	private Object data;

@@ -1,13 +1,17 @@
 package gameabstract;
 
+/*
+ * Author: Aaron Nech
+ * Project: SJGF
+ * Description: This class abstracts the notion of a queued input processor
+ * To use, extend a specific input context to bridge this queue to a
+ * known input way
+ * 
+ */
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-//This class abstracts the notion of a queued input processor
-//To use, extend a specific input context to bridge this queue to a
-//known input way
 
 public abstract class GameInput {
 	private Queue<InputEvent> inputQueue;
