@@ -5,6 +5,7 @@ package simpleui;
  * Description: Radio Button Group class. These manage groups of radio buttons
  * 
  */
+
 import gameabstract.InputEvent;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class SimpleRadioGroup extends SimpleUIComponent {
 		button.setGroup(this);
 		members.add(button);
 	}
-	
+
 	//adds a radio button to the group and subscribes it
 	public void add(SimpleRadio button, SimpleUIListener listener,
 			SimpleEventType action, String methodName) {
@@ -33,7 +34,7 @@ public class SimpleRadioGroup extends SimpleUIComponent {
 		button.setGroup(this);
 		members.add(button);
 	}
-	
+
 	//selects a specific radio button in the group
 	public void select(SimpleRadio radio) {
 		if(members.contains(radio)) {
@@ -43,7 +44,7 @@ public class SimpleRadioGroup extends SimpleUIComponent {
 			selected.set(true);
 		}
 	}
-	
+
 	//selects a radio button in the group by name
 	public void select(String name) {
 		for(SimpleRadio button : members) {
@@ -55,7 +56,7 @@ public class SimpleRadioGroup extends SimpleUIComponent {
 			}
 		}
 	}
-	
+
 	//reacts to input events dished out by the ui manager
 	public boolean react(InputEvent event) {
 		boolean hitOne = false;
